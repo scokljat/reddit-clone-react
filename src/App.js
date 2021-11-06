@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import SideNav from "./components/SideNav";
+import SideBar from "./components/SideBar";
 import Article from "./components/Article";
 import styled from "styled-components";
-
+import GlobalStyle from "./globalStyles";
 const Wrap = styled.div`
   background-color: #e9a6a6;
-  width: 100vw;
   height: 100%;
 `;
 const Wrapper = styled.div`
@@ -41,8 +40,9 @@ function App() {
 
   return (
     <Wrap>
+      <GlobalStyle />
       <Wrapper>
-        <SideNav />
+        <SideBar />
         <Container>
           <h1>All in One</h1>{" "}
           {list.map((item) => {

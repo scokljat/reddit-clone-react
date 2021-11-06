@@ -15,10 +15,11 @@ const StyleBar = styled.div`
     padding: 20px;
   }
 `;
-function SideNav() {
+function SideBar() {
   const menus = [
-    { to: "/r/All in one", text: "All in one" },
-    { to: "/r/Hacker News", text: "Hacker news" },
+    { to: "/", text: "All in one" },
+    { to: "/reddit", text: "Reddit" },
+    { to: "/hn", text: "HN" },
   ];
   return (
     <StyleBar>
@@ -33,4 +34,4 @@ function SideNav() {
   );
 }
 
-export default SideNav;
+export default SideBar;
