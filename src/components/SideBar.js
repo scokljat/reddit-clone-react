@@ -1,36 +1,38 @@
+import { NavLink } from "react-router-dom";
+import Reddit from "../pages/Reddit";
 import styled from "styled-components";
-const StyleBar = styled.div`
+const NavStyle = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 30px;
   font-size: 30px;
+  & li {
+    list-style-type: none;
+  }
   & a {
     text-decoration: none;
     color: #1f1d36;
     font-weight: bold;
   }
-  & ul {
-    list-style-type: none;
-    text-decoration: none;
-    padding: 20px;
-  }
 `;
 function SideBar() {
-  const menus = [
-    { to: "/", text: "All in one" },
-    { to: "/reddit", text: "Reddit" },
-    { to: "/hn", text: "HN" },
-  ];
   return (
-    <StyleBar>
-      <ul>
-        {menus.map((menu) => (
-          <li>
-            <a href={menu.to}>{menu.text}</a>
-          </li>
-        ))}
-      </ul>
-    </StyleBar>
+    <NavStyle>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/">All in one</NavLink>
+            </li>
+            <li>
+              <NavLink to="/reddit">Reddit</NavLink>
+            </li>
+            <li>
+              <NavLink to="/hn">Hacker News</NavLink>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </NavStyle>
   );
 }
 
